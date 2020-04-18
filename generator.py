@@ -27,7 +27,7 @@ with open(file='employees.csv', mode='w') as csv_file:
                         'electronic_mail']
     writer = DictWriter(csv_file, fieldnames=fieldnames)
     writer.writeheader()
-    for e in range(20):
+    for e in range(2000000):
         full_name: list = RussianNames(surname=True, name=True, patronymic=True,
                                        transliterate=True).get_person().lower().split(' ')
         surname: str = full_name[2]
