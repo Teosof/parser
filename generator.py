@@ -5,20 +5,37 @@ from random import randint
 
 
 def set_birth_month() -> str:
+    """
+    Генерация псевдослучайного названия месяца
+    :return: название месяца
+    """
     month: list = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
                    'November', 'December']
     return month[randint(a=0, b=len(month) - 1)]
 
 
 def set_birth_year() -> int:
+    """
+    Генерация псевдослучайного года в пределах от текущего минус сто лет
+    :return: номер года
+    """
     return datetime.now().year - randint(a=0, b=100)
 
 
 def set_department() -> str:
-    return "IT"
+    """
+    Генерация псевдослучайного названия отдела
+    :return: название отдела
+    """
+    department: list = ['IT', 'Accounting', 'Security']
+    return department[randint(a=0, b=len(department) - 1)]
 
 
 def set_telephone() -> str:
+    """
+    Генерация случайного номера телефона
+    :return: номер телефона
+    """
     return f"8495{randint(a=0, b=999)}{randint(a=0, b=99)}{randint(a=0, b=99)}"
 
 

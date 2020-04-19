@@ -5,6 +5,9 @@ Base = declarative_base()
 
 
 class Employee(Base):
+    """
+    Модель, описывающего таблицу Работник
+    """
     __tablename__: str = "Employee"
 
     id = Column(INTEGER, primary_key=True)
@@ -18,6 +21,17 @@ class Employee(Base):
     electronic_mail = Column(TEXT)
 
     def __init__(self, surname, name, patronymic, birth_month, birth_year, department, telephone, electronic_mail):
+        """
+        Инициализация полей таблицы
+        :param surname: фамилия
+        :param name: имя
+        :param patronymic: отчество
+        :param birth_month: месяц рождения
+        :param birth_year: год рождения
+        :param department: отдел
+        :param telephone: номер телефона
+        :param electronic_mail: электронная почта
+        """
         self.surname = surname
         self.name = name
         self.patronymic = patronymic
@@ -28,6 +42,10 @@ class Employee(Base):
         self.electronic_mail = electronic_mail
 
     def __repr__(self):
+        """
+        Переопределение функции print() для возможности вывода в консоль
+        :return: демонстрация данных в консоль
+        """
         return f"Surname: {self.surname}," \
                f"Name: {self.name}," \
                f"Patronymic: {self.patronymic}," \

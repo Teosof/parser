@@ -1,1 +1,1 @@
-db_string_connect = 'postgresql://postgres:123456@localhost/employee'
+db_string_connect: str = 'postgresql://postgres:123456@localhost/employee'
